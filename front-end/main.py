@@ -3,7 +3,6 @@ from simulator import BaseStationSimulator
 
 
 def main():
-    """Initialize and run the simulator."""
     root = tk.Tk()
     root.geometry("1400x850")
     simulator = BaseStationSimulator(root)

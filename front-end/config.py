@@ -1,8 +1,3 @@
-"""
-Configuration settings for the Signal Strength Simulator with PyMARL2 VDN Integration.
-Contains all constants and parameters used throughout the application.
-"""
-
 # Canvas dimensions
 CANVAS_WIDTH = 1200
 CANVAS_HEIGHT = 700
@@ -13,14 +8,15 @@ GRID_COLOR = "#16213e"
 BASE_STATION_COLOR = "#e94560"
 COVERAGE_CIRCLE_COLOR = "#0f3460"
 
-# Base station parameters (3 agents as per VDN)
+# Replace hardcoded BASE_STATIONS with ratio-based positions
 BASE_STATIONS = [
-    {"x": 300, "y": 250, "name": "BS1", "agent_id": 0},
-    {"x": 900, "y": 250, "name": "BS2", "agent_id": 1},
-    {"x": 600, "y": 500, "name": "BS3", "agent_id": 2}
+    {"rx": 0.25, "ry": 0.35, "name": "BS1", "agent_id": 0},
+    {"rx": 0.75, "ry": 0.35, "name": "BS2", "agent_id": 1},
+    {"rx": 0.50, "ry": 0.65, "name": "BS3", "agent_id": 2}
 ]
+
 BASE_STATION_RADIUS = 12
-BASE_STATION_RANGE = 280
+BASE_STATION_RANGE = 380
 
 # Mobile device colors
 MOBILE_COLORS = ["#00d4ff", "#ff6b9d", "#c0e218", "#ffa500", "#9d4edd", 
