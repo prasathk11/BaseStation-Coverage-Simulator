@@ -1,0 +1,31 @@
+# --- VDN specific parameters ---
+
+# use epsilon greedy action selector
+action_selector: "epsilon_greedy"
+epsilon_start: 1.0
+epsilon_finish: 0.05
+epsilon_anneal_time: 50000 # 50000 for 6h_vs_8z
+
+runner: "episode"
+# batch_size_run: 8
+buffer_size: 1800
+# batch_size: 128
+optimizer: 'adam'
+
+
+# t_max: 10050000
+
+# update the target network every {} episodes
+target_update_interval: 3000
+
+
+# agent_output_type: q
+# learner: "q_learner"
+# mixer: "vdn"
+# optimizer: 'adam'
+# name: "vdn_env=dt_rb_allocation"
+# double_q: True
+
+learner: 
+mac: "sd_mac"
+name: "random_env=dt_rb_allocation"

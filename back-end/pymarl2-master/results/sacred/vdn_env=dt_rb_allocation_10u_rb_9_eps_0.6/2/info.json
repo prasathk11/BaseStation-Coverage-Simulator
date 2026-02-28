@@ -1,0 +1,44 @@
+{
+  "ep_length_mean": [
+    30.0
+  ],
+  "ep_length_mean_T": [
+    30
+  ],
+  "epsilon": [
+    1.0
+  ],
+  "epsilon_T": [
+    30
+  ],
+  "return_mean": [
+    296.52346714847823
+  ],
+  "return_mean_T": [
+    30
+  ],
+  "return_std": [
+    0.0
+  ],
+  "return_std_T": [
+    30
+  ],
+  "test_ep_length_mean": [
+    30.0
+  ],
+  "test_ep_length_mean_T": [
+    30
+  ],
+  "test_return_mean": [
+    143.84962680290002
+  ],
+  "test_return_mean_T": [
+    30
+  ],
+  "test_return_std": [
+    100.42321136908699
+  ],
+  "test_return_std_T": [
+    30
+  ]
+}

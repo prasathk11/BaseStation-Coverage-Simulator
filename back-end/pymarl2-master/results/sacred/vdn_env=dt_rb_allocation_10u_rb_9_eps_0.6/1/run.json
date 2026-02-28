@@ -1,0 +1,69 @@
+{
+  "artifacts": [],
+  "command": "my_main",
+  "experiment": {
+    "base_dir": "/Users/prasath/Downloads/pymarl2-master/src",
+    "dependencies": [
+      "munch==2.5.0",
+      "numpy==1.24.4",
+      "PyYAML==5.3.1",
+      "sacred==0.7.5",
+      "torch==2.4.1"
+    ],
+    "mainfile": "main.py",
+    "name": "pymarl",
+    "repositories": [],
+    "sources": [
+      [
+        "main.py",
+        "_sources/main_93aede7741b20d00769da9a1a8bfc0be.py"
+      ],
+      [
+        "utils/logging.py",
+        "_sources/logging_ce9a261c391cbeae67129d3d806d06da.py"
+      ]
+    ]
+  },
+  "heartbeat": "2026-02-18T06:46:42.940934",
+  "host": {
+    "ENV": {},
+    "cpu": "Apple M1 Pro",
+    "hostname": "Prasaths-MacBook-Pro.local",
+    "os": [
+      "Darwin",
+      "macOS-26.2-arm64-arm-64bit"
+    ],
+    "python_version": "3.8.20"
+  },
+  "meta": {
+    "command": "my_main",
+    "options": {
+      "--beat_interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": null,
+      "--force": false,
+      "--help": false,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print_config": false,
+      "--priority": null,
+      "--queue": false,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [],
+      "help": false,
+      "with": false
+    }
+  },
+  "resources": [],
+  "result": null,
+  "start_time": "2026-02-18T06:40:58.392823",
+  "status": "RUNNING"
+}

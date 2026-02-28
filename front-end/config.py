@@ -43,7 +43,7 @@ GAMMA = 0.2
 EPSILON = 0.6
 
 # Model path
-MODEL_PATH = "/Users/prasath/Project/Personal Project/BaseStation-Coverage-Simulator/back-end/models/vdn_env=dt_rb_allocation_10u_rb_9_eps_0.6__2026-02-18_12-10-58"
+MODEL_PATH = "/Users/prasath/Project/Personal Project/BaseStation-Coverage-Simulator/back-end/pymarl2-master/results/models/vdn_env=dt_rb_allocation_10u_rb_9_eps_0.6__2026-02-18_12-10-58"
 
 # Physics settings
 MOBILE_RADIUS = 6

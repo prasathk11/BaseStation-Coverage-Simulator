@@ -1,0 +1,13 @@
+1. Install Pymarl virtual environment. Guidance：https://github.com/hijkzzz/pymarl2
+2. Activate virtual environment and install gymnasium - "pip install gymnasium"
+
+Important files: 
+     - Environment config file: src/config/env/dt_rb_allocation.yaml
+     - Algorithm config file: src/config/algo/vdn.yaml
+     - Environment code: src/envs/dt_marl_env_10u_smallrange.py
+
+Using Value Decomposation Network (VDN) to run the experiment: 
+    cd pymarl2-master
+    python3 src/main.py --config=vdn --env-config=dt_rb_allocation
+
+Results: Model parameters, sacred files and tensorboard files are all saved in "results" folder. 

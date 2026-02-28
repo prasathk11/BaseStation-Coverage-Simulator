@@ -1,0 +1,30 @@
+env: dt_rb_allocation_10u_org
+
+env_args: 
+    epsilon: 0.99
+    # model: 0
+
+# env_args:
+#   n_agents: 5
+#   t: 1
+#   time_limit: 150
+#   episode_limit: 200
+
+# test_greedy: True
+# test_nepisode: 1
+# test_interval: 1000
+# log_interval: 1000
+# runner_log_interval: 1000
+# learner_log_interval: 10000
+# t_max: 50000
+#scenario_name: "continuous_pred_prey_3a"
+# t_max: 200000
+# test_interval: 2000
+# runner_log_interval: 2000
+# learner_log_interval: 2000
+# log_interval: 2000
+
+
+
+# env_args:
+#   map_name: one_step_matrix_game

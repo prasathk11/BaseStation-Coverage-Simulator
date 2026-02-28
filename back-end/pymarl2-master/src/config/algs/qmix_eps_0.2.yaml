@@ -1,0 +1,26 @@
+# --- QMIX specific parameters ---
+
+# use epsilon greedy action selector
+action_selector: "epsilon_greedy"
+epsilon_start: 1.0
+epsilon_finish: 0.05
+epsilon_anneal_time: 12000
+
+runner: "episode"
+
+buffer_size: 1800
+optimizer: 'adam'
+
+# update the target network every {} episodes
+target_update_interval: 3000
+
+# use the Q_Learner to train
+agent_output_type: "q"
+learner: "q_learner"
+double_q: True
+mixer: "qmix"
+mixing_embed_dim: 64
+hypernet_layers: 2
+hypernet_embed: 64
+
+name: "qmix_env=dt_rb_allocation_10u_rb_9_eps_0.2"
