@@ -1,10 +1,11 @@
+import tkinter as tk
+import math
 from config import (
     BACKGROUND_COLOR, GRID_COLOR, BASE_STATION_COLOR, COVERAGE_CIRCLE_COLOR,
     BASE_STATION_RADIUS, BASE_STATION_RANGE, GRID_SIZE, SIGNAL_LINE_ALPHA,
     RB_COLORS
 )
 from utils import calculate_distance, calculate_signal_strength, get_line_width, blend_color
-
 
 class Renderer:
     def __init__(self, canvas):
@@ -33,6 +34,9 @@ class Renderer:
 
 
     def draw_signal_lines(self, base_stations, mobiles, allocation):
+        import math
+        OFFSET = 4  # perpendicular offset between the two parallel edges
+
         for i, mobile in enumerate(mobiles):
             if i not in allocation:
                 continue
@@ -41,13 +45,33 @@ class Renderer:
             bs = base_stations[agent_id]
             distance = calculate_distance(mobile.x, mobile.y, bs["x"], bs["y"])
             signal = calculate_signal_strength(distance)
-            if signal > 0:
-                lw = get_line_width(signal)
-                color = blend_color(line_color, SIGNAL_LINE_ALPHA * signal / 100)
-                self.canvas.create_line(
-                    bs["x"], bs["y"], mobile.x, mobile.y,
-                    fill=color, width=lw
-                )
+            if signal <= 0:
+                continue
+
+            lw = get_line_width(signal)
+            color = blend_color(line_color, SIGNAL_LINE_ALPHA * signal / 100)
+
+            x1, y1 = bs["x"], bs["y"]
+            x2, y2 = mobile.x, mobile.y
+
+            # Perpendicular unit vector for offset
+            dx, dy = x2 - x1, y2 - y1
+            length = math.hypot(dx, dy) or 1
+            px, py = -dy / length * OFFSET, dx / length * OFFSET
+
+            # ── Edge 1: BS → Mobile (arrow at mobile end) ──────────────────
+            self.canvas.create_line(
+                x1 + px, y1 + py, x2 + px, y2 + py,
+                fill=color, width=lw,
+                arrow=tk.LAST, arrowshape=(10, 12, 4)
+            )
+
+            # ── Edge 2: Mobile → BS (arrow at BS end) ──────────────────────
+            self.canvas.create_line(
+                x2 - px, y2 - py, x1 - px, y1 - py,
+                fill=color, width=lw,
+                arrow=tk.LAST, arrowshape=(10, 12, 4)
+            )
 
 
     def draw_base_stations(self, base_stations):

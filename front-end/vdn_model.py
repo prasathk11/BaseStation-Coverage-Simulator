@@ -5,7 +5,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 # ── Config ────────────────────────────────────────────────────────────────────
-MODEL_PATH  = "/Users/prasath/Project/Personal Project/BaseStation-Coverage-Simulator/back-end/models/vdn_env=dt_rb_allocation_10u_rb_9_eps_0.6__2026-02-18_12-10-58/30"
+MODEL_PATH = "/Users/prasath/Project/Personal Project/BaseStation-Coverage-Simulator/back-end/pymarl2-master/results/models/vdn_env=dt_rb_allocation_10u_rb_9_eps_0.6__2026-02-18_12-10-58/30"
 NUM_AGENTS  = 3
 NUM_USERS   = 10
 NUM_RBS     = 4          # n_rbs = len(RbInfo) = 4
@@ -55,7 +55,7 @@ class VDNModel:
         try:
             agent_path = os.path.join(MODEL_PATH, "agent.th")
             if not os.path.exists(agent_path):
-                print(f"✗ agent.th not found: {agent_path}")
+                print(f"agent.th not found: {agent_path}")
                 return
 
             state_dict = torch.load(agent_path, map_location="cpu")
@@ -69,10 +69,10 @@ class VDNModel:
             self._reset_hidden()
             self.model_loaded     = True
             self.using_real_model = True
-            print(f"✓ agent.th loaded  |  input={INPUT_DIM}  hidden={HIDDEN_DIM}  actions={N_ACTIONS}")
+            print(f"agent.th loaded  |  input={INPUT_DIM}  hidden={HIDDEN_DIM}  actions={N_ACTIONS}")
 
         except Exception as e:
-            print(f"✗ Model load failed: {e}")
+            print(f"Model load failed: {e}")
             import traceback; traceback.print_exc()
 
     def _reset_hidden(self):
